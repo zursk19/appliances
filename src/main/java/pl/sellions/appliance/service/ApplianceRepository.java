@@ -1,4 +1,7 @@
 package pl.sellions.appliance.service;
 
-public interface ApplianceRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import pl.sellions.appliance.domain.Appliance;
+
+public interface ApplianceRepository extends JpaRepository<Appliance, String> {
 }
