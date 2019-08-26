@@ -16,8 +16,10 @@ import java.util.List;
 public class Appliance {
 
     @Id
+    @SequenceGenerator(name = "SEQ_APPLIANCE", sequenceName = "SEQ_APPLIANCE")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_APPLIANCE")
     @Column(name = "id")
-    private String id;
+    private Long id;
 
     @Column(name = "name")
     private String name;
@@ -30,5 +32,5 @@ public class Appliance {
     private String description;
 
     @Column(name = "status")
-    private boolean status;
+    private Boolean status;     //status indicating if the device is working
 }

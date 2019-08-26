@@ -1,4 +1,4 @@
-package pl.sellions;
+package pl.sellions.security;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

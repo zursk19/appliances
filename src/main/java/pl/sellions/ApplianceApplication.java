@@ -1,4 +1,4 @@
-package pl.sellions.appliance;
+package pl.sellions;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package pl.sellions;
+package pl.sellions.security;
 
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,7 +19,6 @@ public class ApplianceUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByUsername(username);
-        System.out.println(userRepository.findAll());
         if(isNull(user))
             throw new UsernameNotFoundException("Username not found");
         return new UserDetailsImpl(user);

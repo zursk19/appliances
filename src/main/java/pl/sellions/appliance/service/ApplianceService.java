@@ -20,7 +20,7 @@ public class ApplianceService {
         return applianceRepository.findAll();
     }
 
-    public Appliance getAppliance(String id) {
+    public Appliance getAppliance(Long id) {
         Optional<Appliance> appliance = applianceRepository.findById(id);
         if(appliance.isPresent()){
             return appliance.get();
@@ -28,11 +28,15 @@ public class ApplianceService {
             return null;
     }
 
-    public String createAppliance (Appliance appliance){
+    public Long createAppliance (Appliance appliance){
         Appliance checkAppliance = getAppliance(appliance.getId());
         if(isNull(checkAppliance)) {
             applianceRepository.save(appliance);
         }
         return appliance.getId();
+    }
+
+    public List<Appliance> getApplianceByStatus (Boolean status){
+        return applianceRepository.findByStatus(status);
     }
 }

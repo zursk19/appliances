@@ -21,12 +21,17 @@ public class ApplianceController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
-    public Appliance getAppliance (@RequestParam String id){
+    public Appliance getAppliance (@RequestParam Long id){
         return applianceService.getAppliance(id);
     }
 
     @RequestMapping(value = "/appliance", method = RequestMethod.POST, produces = "application/json")
-    public String createAppliance (@RequestBody Appliance appliance){
+    public Long createAppliance (@RequestBody Appliance appliance){
         return applianceService.createAppliance(appliance);
+    }
+
+    @RequestMapping(value = "/status/", method = RequestMethod.GET, produces = "application/json")
+    public List<Appliance> getAppliancesByStatus(@RequestParam Boolean status){
+        return applianceService.getApplianceByStatus(status);
     }
 }
